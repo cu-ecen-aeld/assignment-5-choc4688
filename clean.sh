@@ -1,8 +1,10 @@
 
-ROOTDIR= dirname $0
+ROOTDIR="$(dirname $0)"
 
-cd $(ROOTDIR)
+cd "${ROOTDIR}"
 cd buildroot
 
 make distclean
+
+cd "${ROOTDIR}"
 
