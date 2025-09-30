@@ -12,7 +12,7 @@ AESD_ASSIGNMENTS_VERSION = ca04162d34bc8a0da0cc8dfe17ffd8c3b0d958de
 # Your site should start with git@github.com:
 AESD_ASSIGNMENTS_SITE = git@github.com:cu-ecen-aeld/assignments-3-and-later-choc4688.git
 AESD_ASSIGNMENTS_SITE_METHOD = git
-AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
+AESD_ASSIGNMENTS_GIT_SUBMODULES = YES 
 
 define AESD_ASSIGNMENTS_BUILD_CMDS
 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app all
