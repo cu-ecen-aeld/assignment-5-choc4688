@@ -15,6 +15,10 @@ jobs:
             with:
               submodules: recursive
               fetch-depth: 0
+          - name: Fix submodules manually
+            run: |
+              git submodule sync
+              git submodule update --init --recursive
           - name: Checkout submodules
             run: git submodule update --init --recursive
           - uses: webfactory/ssh-agent@v0.5.3
