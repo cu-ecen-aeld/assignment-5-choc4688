@@ -19,33 +19,6 @@ define LDD_INSTALL_TARGET_CMDS
     $(HOST_DIR)/sbin/depmod -a -b $(TARGET_DIR) $(LINUX_VERSION_PROBED)
 endef
 
-#Just going to use the default make targets since there is no 'all' in either Makefile
-#*********************************************************
-# define LDD_BUILD_CMDS
-# 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/misc-modules ARCH=$(KERNEL_ARCH) CROSS_COMPILE=$(TARGET_CROSS)
-# 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/scull ARCH=$(KERNEL_ARCH) CROSS_COMPILE=$(TARGET_CROSS)
-# endef
-
-
-# @D = Build Directory (in this case, the assignment 7 repo)
-# Reference:According to Copilot AI, kernel modules should be installed to /lib/modules/$(LINUX_VERSION)/extra/
-
-# 	$(INSTALL) -m 0755 $(@D)/misc-modules/*.ko $(TARGET_DIR)/lib/modules/$(LINUX_VERSION)/extra
-# 	$(INSTALL) -m 0755 $(@D)/scull/*.ko $(TARGET_DIR)/lib/modules/$(LINUX_VERSION)/extra/
-#*****************************
-
-# define LDD_INSTALL_TARGET_CMDS
-
-# 	mkdir -p $(TARGET_DIR)/lib/modules/$(LINUX_VERSION)/extra
-
-
-
-# 	cp $(@D)/misc-modules/*.ko $(TARGET_DIR)/lib/modules/$(LINUX_VERSION)/extra/ || true
-#     cp $(@D)/scull/*.ko $(TARGET_DIR)/lib/modules/$(LINUX_VERSION)/extra/ || true
-
-
-# endef
-
 
 $(eval $(kernel-module))
 $(eval $(generic-package))
