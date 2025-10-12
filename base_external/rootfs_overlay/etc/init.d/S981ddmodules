@@ -105,7 +105,7 @@ case "$1" in
         #-------------------------------------------------
         #Run modprobe on the hello module to load on startup
 
-        modprobe /lib/modules/$(uname -r)/extra/hello.ko || exit 1
+        modprobe hello || exit 1
 
 
         
