@@ -7,7 +7,7 @@ LDD_VERSION = 5db9d1b4a0f0a7a9947ac11368a7a6d88f356204
 LDD_SITE = git@github.com:cu-ecen-aeld/assignment-7-choc4688.git
 LDD_SITE_METHOD = git
 LDD_GIT_SUBMODULES = YES 
-
+ 
 
 LDD_MODULE_SUBDIRS = misc-modules
 LDD_MODULE_SUBDIRS += scull
