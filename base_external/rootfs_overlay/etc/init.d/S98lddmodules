@@ -5,6 +5,8 @@
 case "$1" in   
     start)
         echo "Starting modules"
+
+        echo "Loading scull"
         
         #Load scull
         module="scull"
@@ -68,6 +70,7 @@ case "$1" in
 
 
         #----------------------------------
+        echo "Loading faulty node"
 
         #Load faulty module
         module="faulty"
@@ -105,6 +108,8 @@ case "$1" in
         #-------------------------------------------------
         #Run modprobe on the hello module to load on startup
 
+        echo "Loading hello"
+
         modprobe hello || exit 1
 
 
@@ -113,6 +118,7 @@ case "$1" in
     stop)
         echo "Stopping modules"
         
+        echo "Unloading scull"
 
         #Unload scull
         module="scull"
@@ -134,6 +140,8 @@ case "$1" in
 
         #Unload faulty module
 
+        echo "Unloading faulty module"
+
         module="faulty"
         device="faulty"
 
@@ -145,11 +153,16 @@ case "$1" in
         rm -f /dev/${device}
 
         #-------------------------------------------------
+        echo "Unloading hello"
+
         rmmod hello || exit 1
 
         ;;
     *)
         echo "Usage: $0 {start|stop}"
+
+
+    echo "A7 Debug: S98 exit"
     exit 1
 esac
 
